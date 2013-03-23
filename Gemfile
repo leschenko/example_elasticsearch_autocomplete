@@ -13,6 +13,11 @@ end
 
 gem 'jquery-rails'
 
-gem 'elasticsearch_autocomplete'
+gem 'elasticsearch_autocomplete', git: 'git://github.com/leschenko/elasticsearch_autocomplete.git'
+gem 'will_paginate'
 # for bulk insert
 gem 'activerecord-import'
+
+group :development, :test do
+  gem 'forgery'
+end
