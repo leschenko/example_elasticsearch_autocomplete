@@ -1,4 +1,4 @@
-# ElasticsearchAutocomplete example app
+# elasticsearch_autocomplete example app
 
 This is example autocomplete app using [elasticsearch_autocomplete](https://github.com/leschenko/elasticsearch_autocomplete) gem
 
