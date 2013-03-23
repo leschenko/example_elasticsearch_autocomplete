@@ -1,6 +1,6 @@
-# elasticsearch_autocomplete example app
+# Example app for elasticsearch_autocomplete gem
 
-This is example autocomplete app using [elasticsearch_autocomplete](https://github.com/leschenko/elasticsearch_autocomplete) gem
+This is an example autocomplete app for [elasticsearch_autocomplete](https://github.com/leschenko/elasticsearch_autocomplete) gem
 
 ## Installation
 
@@ -27,4 +27,4 @@ Run server
   bundle exec rails s
 ```
 
-Visit `http://localhost:3000` and try it
+Visit `http://localhost:3000` and try it!
