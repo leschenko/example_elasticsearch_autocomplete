@@ -1,0 +1,7 @@
+<div id="container">
+  <h1>Elasticsearch autocomplete example</h1>
+
+  <%= form_tag '/', id: 'search_form', method: :get do %>
+    <%= text_field_tag :q, params[:q] %>
+  <% end %>
+</div>
