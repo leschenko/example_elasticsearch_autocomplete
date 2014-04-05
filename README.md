@@ -10,6 +10,7 @@ Clone repository and setup application:
   git clone git://github.com/leschenko/example_elasticsearch_autocomplete.git
   cd example_elasticsearch_autocomplete
   bundle install
+  bundle update
   rake db:create
   rake db:migrate
 ```
