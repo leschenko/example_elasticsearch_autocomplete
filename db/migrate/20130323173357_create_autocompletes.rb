@@ -3,7 +3,6 @@ class CreateAutocompletes < ActiveRecord::Migration
     create_table :autocompletes do |t|
       t.string :term
       t.integer :freq
-      t.boolean :is_index, default: true, null: false
 
       t.timestamps
     end

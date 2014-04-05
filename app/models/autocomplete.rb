@@ -15,14 +15,14 @@ class Autocomplete < ActiveRecord::Base
     columns = [:term, :freq]
     words = []
 
-    Autocomplete.delete_all('is_index=TRUE')
+    Autocomplete.delete_all
 
     # some model related imports
-    #[[Post.visible, :title], [Tag, :name]].each do |m|
-    #  words += m[0].const_get(:Translation).pluck(m[1])
-    #end
+    # [[Post.visible, :title], [Tag, :name]].each do |m|
+    #   words += m[0].const_get(:Translation).pluck(m[1])
+    # end
     #
-    #words += User.persons.map(&:full_name)
+    # words += User.all.map(&:full_name)
 
     100.times do
       words << Forgery::Name.full_name
