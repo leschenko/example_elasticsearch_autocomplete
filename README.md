@@ -18,7 +18,6 @@ Setup autocomplete data and elasticsearch index:
 
 ```bash
   rake autocomplete
-  rake environment tire:import CLASS=Autocomplete FORCE=true
 ```
 
 Run server
