@@ -1,17 +1,30 @@
 require 'word_count'
+
 class Autocomplete < ActiveRecord::Base
   ac_field :term
+  
+  mapping do
+    indexes :freq, type: 'integer'
+  end
 
   def to_indexed_json
     {term: term, freq: freq}.to_json
   end
 
-  def self.search(query)
+  def self.search(query, params={})
     return [] if query.blank?
-    ac_search(query, order: 'freq', sort_mode: 'desc').map(&:term).uniq
+    options = {order: 'freq', sort_mode: 'desc', per_page: params[:per_page]}
+    results = perform(query, options)
+    results = perform(query.tr_lang, options) if results.empty? && params[:keyboard_correct]
+    results
   end
 
-  def self.perform
+
+  def self.perform(query, options)
+    ac_search(query, options).map(&:term).uniq
+  end
+
+  def self.populate
     columns = [:term, :freq]
     words = []
 
@@ -30,6 +43,7 @@ class Autocomplete < ActiveRecord::Base
     end
 
     import(columns, words.compact.word_count.to_a)
+    tire.import(per_page: 10_000)
     count
   end
 

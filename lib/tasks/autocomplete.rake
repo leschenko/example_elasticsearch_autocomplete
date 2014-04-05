@@ -1,3 +1,3 @@
 task autocomplete: :environment do
-  Autocomplete.perform
+  Autocomplete.populate
 end
